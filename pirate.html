@@ -81,44 +81,127 @@
 
       <div class="container">
         <div class="image-row d-flex justify-content-center">
-           <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-           <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-           <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-           <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-           <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
+           <div><img id="id0" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(0)"></div> 
+           <div><img id="id1" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(1)"></div> 
+           <div><img id="id2" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(2)"></div> 
+           <div><img id="id3" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(3)"></div> 
+           <div><img id="id4" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(4)"></div> 
 
           </div>
         </div>
         
         <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
+            <div><img id="id5" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(5)"></div> 
+            <div><img id="id6" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(6)"></div> 
+            <div><img id="id7" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(7)"></div> 
+            <div><img id="id8" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(8)"></div> 
+            <div><img id="id9" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(9)"></div> 
         </div>
         </div>
   
         <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
+            <div><img id="id10" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(10)"></div> 
+            <div><img id="id11" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(11)"></div> 
+            <div><img id="id12" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(12)"></div> 
+            <div><img id="id13" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(13)"></div> 
+            <div><img id="id14" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(14)"></div> 
         </div>
         </div>
   
         <div class="container">
         <div class="image-row d-flex justify-content-center">
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
-            <div><img src="location.jpg" alt="Hidden treasure" height="125" width="125"></div> 
+            <div><img id="id15" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(15)"></div> 
+            <div><img id="id16" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(16)"></div> 
+            <div><img id="id17" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(17)"></div> 
+            <div><img id="id18" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(18)"></div> 
+            <div><img id="id19" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(19)"></div> 
         </div>
         </div>
+
+        
+        <div class="container">
+          <div class="image-row d-flex justify-content-center">
+              <div><img id="id20" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(20)"></div> 
+              <div><img id="id21" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(21)"></div> 
+              <div><img id="id22" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(22)"></div> 
+              <div><img id="id23" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(23)"></div> 
+              <div><img id="id24" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(24)"></div> 
+          </div>
+          </div>
+
+          <script>
+            var ids=["id0","id1","id2","id3","id4",
+                     "id5","id6","id7","id8","id9",
+                     "id10","id11","id12","id13","id14",
+                     "id15","id16","id17","id18","id19",
+                     "id20","id21","id23","id24"
+                    ];
+            var checkCount=0;
+            var penalty=0;
+            var lastCheck=0;
+            var treasureLocation=5;
+            var trapLocation=18;
+            var  gameOver=false;
+
+          function  check(position){
+            if(gameOver) return;
+          
+            const id = ids[position];
+            const imageElement = document.getElementById(id);
+            
+            let imageSrc = "";
+        if (position === treasureLocation) {
+            imageSrc = "treasure.jpg";
+            gameOver = true;
+            penalty -= 3;
+            checkCount++;
+        } else if (position === trapLocation) {
+            imageSrc = "trap.jpg";
+            gameOver = true;
+            penalty += 4;
+            checkCount++;
+        } else {
+            imageSrc = "pirate.jpg";
+            checkCount++;
+            penalty++;
+        }
+
+        imageElement.setAttribute("src", imageSrc);
+        document.getElementById("locations").textContent = "Number of locations checked is : " + checkCount;
+        document.getElementById("penalty").textContent = "Penalty is : " + penalty;
+        lastCheck = position;
+
+          }
+            
+
+        function help(){
+          if (gameOver) return;
+            const row = Math.floor(lastCheck / 5);
+            const col = lastCheck % 5;
+            const treasureRow = Math.floor(treasureLocation / 5);
+            const treasureCol = treasureLocation % 5;
+            const rowDiff = Math.abs(treasureRow - row);
+            const colDiff = Math.abs(treasureCol - col);
+
+            if ((rowDiff <= 1 && colDiff <= 1) && (rowDiff + colDiff > 1)) {
+                 return  'Can Smell It';
+            } else if (rowDiff <= 2 && colDiff <= 2) {
+                 return 'Close Matie';
+            } else {
+                 return 'Step Faster';
+            }
+            penalty += 2;
+            document.getElementById("penalty").textContent = "Penalty is : " + penalty;
+            document.getElementById("help").textContent = "Help ";
+          }
+
+        function showHelp() {
+        document.getElementById("help").textContent = help();
+        }
+        
+          </script>
     </main>
   </body>
   </html>
