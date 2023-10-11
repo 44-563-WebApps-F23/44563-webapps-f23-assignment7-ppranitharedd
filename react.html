@@ -25,10 +25,10 @@
     <br>
     <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
     <button type="button" class="btn btn-primary" onclick="recordTime()">React</button>
+    <button type="button" class="btn btn-primary" onclick="randomStart()">Random Start</button>
 
 <script>
    var reactTime=undefined;
-   
    function recordTime(){
     reactTime=Date.now();
     console.log(reactTime);
@@ -52,10 +52,13 @@
           },8*1000)
       }
 
-      function randomStart(){
+    function randomStart(){
+
         startCount = Math.floor(Math.random()*(10-2+1)+2)
         startTime()
+
     }
+
 </script>
 </body>
 
