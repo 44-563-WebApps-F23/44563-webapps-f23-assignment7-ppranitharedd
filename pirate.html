@@ -80,6 +80,7 @@
     <p id="penalty">Penalty is zero</p>
     <p id="click" onclick="showHelp()">Click for help</p>
     <p id="help">Help report</p>
+    <br>
     <p id="game" onclick="newGame()">New Game</p>
 
     <div class="container">
@@ -188,6 +189,10 @@
         } else {
             return "Step Faster";
         }
+        penalty += 2;
+        document.getElementById("penalty").textContent = "Penalty is : " + penalty;
+        document.getElementById("help").textContent = "Help ";
+
     }
 
     function showHelp() {
