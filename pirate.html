@@ -29,8 +29,8 @@
 
         #locations,
         #penalty,
-        #help,
-        #click {
+        #click
+          {
             font-size: 14px;
             font-weight: bold;
             margin: 10px;
@@ -41,6 +41,30 @@
             background-color: rgb(233, 10, 129);
             color: rgb(238, 250, 7);
 
+        }
+        #help{
+          font-size: 14px;
+            font-weight: bold;
+            margin: 10px;
+            padding: 12px;
+            border: 2px solid #1aed13;
+            border-radius: 10px;
+            display: inline-block;
+            background-color: #aa0ae9;
+            color: rgb(238, 250, 7);
+
+        }
+
+        #game{
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px;
+            padding: 12px;
+            border: 2px solid #1aed13;
+            border-radius: 10px;
+            display: inline-block;
+            background-color: #37fcdb;
+            color: rgb(1, 11, 4);
         }
         .Pirate{
                 color: crimson;
@@ -56,6 +80,7 @@
     <p id="penalty">Penalty is zero</p>
     <p id="click" onclick="showHelp()">Click for help</p>
     <p id="help">Help report</p>
+    <p id="game" onclick="newGame()">New Game</p>
 
     <div class="container">
       <div class="image-row d-flex justify-content-center">
@@ -157,7 +182,7 @@
         const colDiff = Math.abs(rowColTreasure.col - rowColLast.col);
 
         if (rowDiff + colDiff === 1) {
-            return "Can smell it";
+            return "Can Smell It";
         } else if (rowDiff + colDiff === 2) {
             return "Close Matie";
         } else {
@@ -168,25 +193,28 @@
     function showHelp() {
         document.getElementById("help").textContent = help();
     }
+ 
+    function newGame() {
+    checkCount = 0;
+    penalty = 0;
+    lastCheck = 0;
+    gameOver = false;
 
-    function newGame(){
-        checkCount = 0;
-        penalty = 0;
-        lastCheck = 0;
-        gameOver = false;
+    treasureLocation = Math.floor(Math.random() * 25);
+    do {
+        trapLocation = Math.floor(Math.random() * 25);
+    } while (trapLocation === treasureLocation);
 
-        treasureLocation = Math.floor(Math.random() * 25);
-        do {
-            trapLocation = Math.floor(Math.random() * 25);
-        } while (trapLocation === treasureLocation);
-      }
-        document.getElementById("locations").innerHTML = "Number of locations checked is : " + checkCount;
-        document.getElementById("penalty").innerHTML = "Penalty is : " + penalty;
-        document.getElementById("help").innerHTML = "Help report";
+    document.getElementById("locations").textContent = "Number of locations checked is : " + checkCount;
+    document.getElementById("penalty").textContent = "Penalty is : " + penalty;
+    document.getElementById("help").textContent = "Help report";
 
     for (var i = 0; i < 25; i++) {
-            document.getElementById(ids[i]).src = "location.jpg"
-        }
+        document.getElementById(ids[i]).src = "location.jpg"
+    }
+}
+
+
 
 </script>
 
