@@ -150,17 +150,17 @@
 
         let imageSrc = "";
         if (position === treasureLocation) {
-            imageSrc = "FirstImage.jpg";
+            imageSrc = "treasure.jpg";
             gameOver = true;
             penalty -= 3;
             checkCount++;
         } else if (position === trapLocation) {
-            imageSrc = "ThirdImage.jpg";
+            imageSrc = "trap.jpg";
             gameOver = true;
             penalty += 4;
             checkCount++;
         } else {
-            imageSrc = "FourthImage.jpg";
+            imageSrc = "pirate.jpg";
             checkCount++;
             penalty++;
         }
