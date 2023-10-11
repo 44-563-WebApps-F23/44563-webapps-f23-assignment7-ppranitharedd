@@ -69,7 +69,7 @@
   <main>
   
 
-    <p class="Pirate">Click on the locations to search for treasure, beware the traps</p>
+    <p class="pirate">Click on the locations to search for treasure, beware the traps</p>
     <p id="locations">Number of locations checked is zero</p>
     <p id="penalty">Penalty is zero</p>
     <p id="click" onclick="showHelp()">Click for help</p>
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    
+
     <div class="container">
       <div class="image-row d-flex justify-content-center">
         <div><img id="id20" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(20)"></div>
@@ -150,44 +150,41 @@
 
         let imageSrc = "";
         if (position === treasureLocation) {
-          imageSrc = "treasure.jpg";
-          gameOver = true;
-          penalty -= 3;
-          checkCount++;
+            imageSrc = "FirstImage.jpg";
+            gameOver = true;
+            penalty -= 3;
+            checkCount++;
         } else if (position === trapLocation) {
-          imageSrc = "trap.jpg";
-          gameOver = true;
-          penalty += 4;
-          checkCount++;
+            imageSrc = "ThirdImage.jpg";
+            gameOver = true;
+            penalty += 4;
+            checkCount++;
         } else {
-          imageSrc = "pirate.jpg";
-          checkCount++;
-          penalty++;
+            imageSrc = "FourthImage.jpg";
+            checkCount++;
+            penalty++;
         }
 
         imageElement.setAttribute("src", imageSrc);
         document.getElementById("locations").textContent = "Number of locations checked is : " + checkCount;
         document.getElementById("penalty").textContent = "Penalty is : " + penalty;
-        lastCheck = position;
-
-      }
+        lastCheck = position; 
+    }
 
 
       function help() {
-        if (gameOver) return;
-        const row = Math.floor(lastCheck / 5);
-        const col = lastCheck % 5;
-        const treasureRow = Math.floor(treasureLocation / 5);
-        const treasureCol = treasureLocation % 5;
-        const rowDiff = Math.abs(treasureRow - row);
-        const colDiff = Math.abs(treasureCol - col);
+        const rowColTreasure = { row: Math.floor(treasureLocation / 5), col: treasureLocation % 5 };
+        const rowColLast = { row: Math.floor(lastCheck / 5), col: lastCheck % 5 };
 
-        if ((rowDiff <= 1 && colDiff <= 1) && (rowDiff + colDiff > 1)) {
-          return 'Can Smell It';
-        } else if (rowDiff <= 2 && colDiff <= 2) {
-          return 'Close Matie';
+        const rowDiff = Math.abs(rowColTreasure.row - rowColLast.row);
+        const colDiff = Math.abs(rowColTreasure.col - rowColLast.col);
+
+        if (rowDiff + colDiff === 1) {
+            return "Can smell it";
+        } else if (rowDiff + colDiff === 2) {
+            return "Close Matie";
         } else {
-          return 'Step Faster';
+            return "Step Faster";
         }
         penalty += 2;
         document.getElementById("penalty").textContent = "Penalty is : " + penalty;
