@@ -1,171 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Pirate Title</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <style>
-        /* Custom styles for the header */
-        header {
-          background-color: #333;
-          color: white;
-          text-align: center;
-          padding: 20px;
-        }
-        
-        /* Custom styles for the main content */
-        main {
-          padding: 20px;
-        }
-    
-        /* Styling for the instructions */
-        .instructions {
-          background-color: #f0f0f0;
-          padding: 10px;
-          border-radius: 5px;
-        }
-    
-        /* Styling for the help section */
-        .help-section {
-          background-color: #f0f0f0;
-          padding: 10px;
-          border-radius: 5px;
-          margin-top: 20px;
-          text-align: center;
-        }
-    
-        /* Styling for the "Click for help" button */
-        .help-section p {
-          cursor: pointer;
-          text-decoration: underline;
-        }
-    
-        /* Styling for the help report */
-        #help {
-          display: none;
-          margin-top: 10px;
-          padding: 10px;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-        }
-      </style>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <style>
+    /* Custom styles for the header */
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Custom styles for the main content */
+    main {
+      padding: 20px;
+    }
+
+    /* Styling for the instructions */
+    .instructions {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    /* Styling for the help section */
+    .help-section {
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    /* Styling for the "Click for help" button */
+    .help-section p {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* Styling for the help report */
+    #help {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-      <h1>Find the treasure by Pranitha Reddy Policepatel</h1>
-    </header>
-    <main>
-      <div class="instructions">
-        <p>Click on the locations to search for treasure, beware the traps.</p>
+  <header>
+    <h1>Find the treasure by Pranitha Reddy Policepatel</h1>
+  </header>
+  <main>
+    <div class="Pirate">
+      <p>Click on the locations to search for treasure, beware the traps.</p>
+    </div>
+    <div id="locations">
+      <p>Number of locations checked is zero.</p>
+    </div>
+    <div id="penalty">
+      <p>Penalty is zero.</p>
+    </div>
+    <div class="help-section">
+      <p  id="click" onclick="showHelp()">Click for help.</p>
+    <div id="help">
+        <p>Help report</p>
+    </div>
+    </div>
+
+    <div class="container">
+      <div class="image-row d-flex justify-content-center">
+        <div><img id="id0" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(0)"></div>
+        <div><img id="id1" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(1)"></div>
+        <div><img id="id2" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(2)"></div>
+        <div><img id="id3" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(3)"></div>
+        <div><img id="id4" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(4)"></div>
+
       </div>
-      <div id="locations">
-        <p>Number of locations checked is zero.</p>
+    </div>
+
+    <div class="container">
+      <div class="image-row d-flex justify-content-center">
+        <div><img id="id5" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(5)"></div>
+        <div><img id="id6" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(6)"></div>
+        <div><img id="id7" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(7)"></div>
+        <div><img id="id8" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(8)"></div>
+        <div><img id="id9" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(9)"></div>
       </div>
-      <div id="penalty">
-        <p>Penalty is zero.</p>
+    </div>
+
+    <div class="container">
+      <div class="image-row d-flex justify-content-center">
+        <div><img id="id10" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(10)"></div>
+        <div><img id="id11" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(11)"></div>
+        <div><img id="id12" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(12)"></div>
+        <div><img id="id13" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(13)"></div>
+        <div><img id="id14" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(14)"></div>
       </div>
-      <div class="help-section">
-        <p>Click for help.</p>
-        <div id="help">
-          <p>Help report</p>
-        </div>
+    </div>
+
+    <div class="container">
+      <div class="image-row d-flex justify-content-center">
+        <div><img id="id15" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(15)"></div>
+        <div><img id="id16" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(16)"></div>
+        <div><img id="id17" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(17)"></div>
+        <div><img id="id18" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(18)"></div>
+        <div><img id="id19" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(19)"></div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="image-row d-flex justify-content-center">
-           <div><img id="id0" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(0)"></div> 
-           <div><img id="id1" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(1)"></div> 
-           <div><img id="id2" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(2)"></div> 
-           <div><img id="id3" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(3)"></div> 
-           <div><img id="id4" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(4)"></div> 
 
-          </div>
-        </div>
-        
-        <div class="container">
-        <div class="image-row d-flex justify-content-center">
-            <div><img id="id5" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(5)"></div> 
-            <div><img id="id6" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(6)"></div> 
-            <div><img id="id7" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(7)"></div> 
-            <div><img id="id8" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(8)"></div> 
-            <div><img id="id9" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(9)"></div> 
-        </div>
-        </div>
-  
-        <div class="container">
-        <div class="image-row d-flex justify-content-center">
-            <div><img id="id10" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(10)"></div> 
-            <div><img id="id11" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(11)"></div> 
-            <div><img id="id12" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(12)"></div> 
-            <div><img id="id13" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(13)"></div> 
-            <div><img id="id14" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(14)"></div> 
-        </div>
-        </div>
-  
-        <div class="container">
-        <div class="image-row d-flex justify-content-center">
-            <div><img id="id15" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(15)"></div> 
-            <div><img id="id16" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(16)"></div> 
-            <div><img id="id17" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(17)"></div> 
-            <div><img id="id18" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(18)"></div> 
-            <div><img id="id19" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(19)"></div> 
-        </div>
-        </div>
+    <div class="container">
+      <div class="image-row d-flex justify-content-center">
+        <div><img id="id20" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(20)"></div>
+        <div><img id="id21" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(21)"></div>
+        <div><img id="id22" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(22)"></div>
+        <div><img id="id23" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(23)"></div>
+        <div><img id="id24" src="location.jpg" alt="Hidden treasure" height="125" width="125" onclick="check(24)"></div>
+      </div>
+    </div>
 
-        
-        <div class="container">
-          <div class="image-row d-flex justify-content-center">
-              <div><img id="id20" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(20)"></div> 
-              <div><img id="id21" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(21)"></div> 
-              <div><img id="id22" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(22)"></div> 
-              <div><img id="id23" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(23)"></div> 
-              <div><img id="id24" src="location.jpg" alt="Hidden treasure" height="125" width="125"  onclick="check(24)"></div> 
-          </div>
-          </div>
+    <script>
+      var ids = ["id0", "id1", "id2", "id3", "id4",
+        "id5", "id6", "id7", "id8", "id9",
+        "id10", "id11", "id12", "id13", "id14",
+        "id15", "id16", "id17", "id18", "id19",
+        "id20", "id21", "id23", "id24"
+      ];
+      var checkCount = 0;
+      var penalty = 0;
+      var lastCheck = 0;
+      var treasureLocation = 5;
+      var trapLocation = 18;
+      var gameOver = false;
 
-          <script>
-            var ids=["id0","id1","id2","id3","id4",
-                     "id5","id6","id7","id8","id9",
-                     "id10","id11","id12","id13","id14",
-                     "id15","id16","id17","id18","id19",
-                     "id20","id21","id23","id24"
-                    ];
-            var checkCount=0;
-            var penalty=0;
-            var lastCheck=0;
-            var treasureLocation=5;
-            var trapLocation=18;
-            var  gameOver=false;
+      function check(position) {
+        if (gameOver) return;
 
-          function  check(position){
-            if(gameOver) return;
-          
-            const id = ids[position];
-            const imageElement = document.getElementById(id);
-            
-            let imageSrc = "";
+        const id = ids[position];
+        const imageElement = document.getElementById(id);
+
+        let imageSrc = "";
         if (position === treasureLocation) {
-            imageSrc = "treasure.jpg";
-            gameOver = true;
-            penalty -= 3;
-            checkCount++;
+          imageSrc = "treasure.jpg";
+          gameOver = true;
+          penalty -= 3;
+          checkCount++;
         } else if (position === trapLocation) {
-            imageSrc = "trap.jpg";
-            gameOver = true;
-            penalty += 4;
-            checkCount++;
+          imageSrc = "trap.jpg";
+          gameOver = true;
+          penalty += 4;
+          checkCount++;
         } else {
-            imageSrc = "pirate.jpg";
-            checkCount++;
-            penalty++;
+          imageSrc = "pirate.jpg";
+          checkCount++;
+          penalty++;
         }
 
         imageElement.setAttribute("src", imageSrc);
@@ -173,35 +177,36 @@
         document.getElementById("penalty").textContent = "Penalty is : " + penalty;
         lastCheck = position;
 
-          }
-            
+      }
 
-        function help(){
-          if (gameOver) return;
-            const row = Math.floor(lastCheck / 5);
-            const col = lastCheck % 5;
-            const treasureRow = Math.floor(treasureLocation / 5);
-            const treasureCol = treasureLocation % 5;
-            const rowDiff = Math.abs(treasureRow - row);
-            const colDiff = Math.abs(treasureCol - col);
 
-            if ((rowDiff <= 1 && colDiff <= 1) && (rowDiff + colDiff > 1)) {
-                 return  'Can Smell It';
-            } else if (rowDiff <= 2 && colDiff <= 2) {
-                 return 'Close Matie';
-            } else {
-                 return 'Step Faster';
-            }
-            penalty += 2;
-            document.getElementById("penalty").textContent = "Penalty is : " + penalty;
-            document.getElementById("help").textContent = "Help ";
-          }
+      function help() {
+        if (gameOver) return;
+        const row = Math.floor(lastCheck / 5);
+        const col = lastCheck % 5;
+        const treasureRow = Math.floor(treasureLocation / 5);
+        const treasureCol = treasureLocation % 5;
+        const rowDiff = Math.abs(treasureRow - row);
+        const colDiff = Math.abs(treasureCol - col);
 
-        function showHelp() {
-        document.getElementById("help").textContent = help();
+        if ((rowDiff <= 1 && colDiff <= 1) && (rowDiff + colDiff > 1)) {
+          return 'Can Smell It';
+        } else if (rowDiff <= 2 && colDiff <= 2) {
+          return 'Close Matie';
+        } else {
+          return 'Step Faster';
         }
-        
-          </script>
-    </main>
-  </body>
-  </html>
+        penalty += 2;
+        document.getElementById("penalty").textContent = "Penalty is : " + penalty;
+        document.getElementById("help").textContent = "Help ";
+      }
+
+      function showHelp() {
+        document.getElementById("help").textContent = help();
+      }
+
+    </script>
+  </main>
+</body>
+
+</html>
